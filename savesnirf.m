@@ -57,18 +57,23 @@ if (~isempty(outfile))
             forceint = {'sourceIndex', 'detectorIndex', 'wavelengthIndex', ...
                         'dataType', 'dataTypeIndex', 'moduleIndex', ...
                         'sourceModuleIndex', 'detectorModuleIndex'};
-            for i = 1:length(forceint)
-                if (isfield(data.nirs.data.measurementList, forceint{i}))
-                    if (iscell(data.nirs.data.measurementList.(forceint{i})))
-                        data.nirs.data.measurementList.(forceint{i}) = cell2mat(data.nirs.data.measurementList.(forceint{i}));
-                    end
-                    data.nirs.data.measurementList.(forceint{i}) = int32(data.nirs.data.measurementList.(forceint{i}));
-                end
-            end
             if (length(data.nirs.data.measurementList) == 1 && ...
                 length(data.nirs.data.measurementList.sourceIndex) > 1)
                 data.nirs.data.measurementList = soa2aos(data.nirs.data.measurementList);
             end
+
+            for i = 1:length(forceint)
+                if (isfield(data.nirs.data.measurementList, forceint{i}))
+
+                    for j = 1:length(data.nirs.data.measurementList)
+                        if (iscell(data.nirs.data.measurementList(j).(forceint{i})))
+                            data.nirs.data.measurementList(j).(forceint{i}) = cell2mat(data.nirs.data.measurementList(j).(forceint{i}));
+                        end
+                        data.nirs.data.measurementList(j).(forceint{i}) = int32(data.nirs.data.measurementList(j).(forceint{i}));
+                    end
+                end
+            end
+
         end
         if (opt.rowas1d)
             force1d.probe = {'wavelengths', 'wavelengthsEmission', 'frequencies', ...
