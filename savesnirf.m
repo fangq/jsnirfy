@@ -100,9 +100,6 @@ if (~isempty(outfile))
             for i = 1:length(fields)
                 for j = 1:length(forcestrarray.(fields{i}))
                     if (isfield(data.nirs.(fields{i}), forcestrarray.(fields{i}){j}))
-                        if (iscell(data.nirs.(fields{i}).(forcestrarray.(fields{i}){j})))
-                            data.nirs.(fields{i}).(forcestrarray.(fields{i}){j}) = cell2mat(data.nirs.(fields{i}).(forcestrarray.(fields{i}){j}));
-                        end
                         data.nirs.(fields{i}).(forcestrarray.(fields{i}){j}) = timeseries(string(data.nirs.(fields{i}).(forcestrarray.(fields{i}){j})(:).'));
                     end
                 end
