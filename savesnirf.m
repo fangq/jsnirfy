@@ -93,7 +93,7 @@ if (~isempty(outfile))
                 end
             end
         end
-        if (isfield(data.nirs, 'probe'))
+        if (isfield(data.nirs, 'probe') && exist('string'))
             forcestrarray.probe = {'sourceLabels', 'detectorLabels', 'landmarkLabels'};
             forcestrarray.stim = {'dataLabels'};
             fields = fieldnames(forcestrarray);
