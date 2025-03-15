@@ -1,9 +1,10 @@
 # JSNIRF Toolbox - A portable MATLAB toolbox for parsing SNIRF (HDF5) and JSNIRF (JSON) files
 
-* Copyright (C) 2019  Qianqian Fang <q.fang at neu.edu>
+* Copyright (C) 2019,2025  Qianqian Fang <q.fang at neu.edu>
 * License: GNU General Public License version 3 (GPL v3) or Apache License 2.0, see License*.txt
-* Version: 0.4 (code name: Amygdala - alpha)
-* URL: https://github.com/NeuroJSON/jsnirf/tree/master/lib/matlab
+* Version: 0.5 (code name: Amygdala)
+* Compatibility: MATLAB R2010b or newer, R2016b or newer saves SNIRF-1.1 compliant files
+* URL: https://github.com/NeuroJSON/jsnirfy
 
 ## Overview
 
@@ -20,18 +21,18 @@ storage, grouping, compression, integration with heterogeneous scientific data
 enabled by JData data serialization framework.
 
 This toolbox also provides a fast/complete reader/writer for the HDF5-based SNIRF
-files (along with any HDF5 data) via the EazyH5 toolbox 
-(http://github.com/fangq/eazyh5). The toolbox can read/write SNIRF v1.0 data
+files (along with any HDF5 data) via the EasyH5 toolbox 
+(http://github.com/NeuroJSON/easyh5). The toolbox can read/write SNIRF v1.0 data
 files specified by the SNIRF specification http://github.com/fNIRS/snirf .
 
 This toolbox is selectively dependent on the below toolboxes
-- To read/write SNIRF/HDF5 files, one must install the EazyH5 toolbox at 
-  http://github.com/fangq/eazyh5 ; this is only supported on MATLAB, not Octave.
+- To read/write SNIRF/HDF5 files, one must install the EasyH5 toolbox at 
+  http://github.com/NeuroJSON/easyh5 ; this is only supported on MATLAB, not Octave.
 - To create/read/write JSNIRF files, one must install the JSONLab toolbox
   http://github.com/NeuroJSON/jsonlab ; this is supported on both MATLAB and Octave.
 - To read/write JSNIRF files with internal data compression, one must install 
   the JSONLab toolbox http://github.com/NeuroJSON/jsonlab as well as ZMat toolbox
-  http://github.com/fangq/zmat ; this is supported on both MATLAB and Octave.
+  http://github.com/NeuroJSON/zmat ; this is supported on both MATLAB and Octave.
 
 ## Why JSNIRF?
 
@@ -152,12 +153,12 @@ where the `/path/to/jsnirf` should be replaced by the unzipped folder
 of the toolbox (i.e. the folder containing `savejsnirf.m/loadjsnirf.m`).
 
 In order for this toolbox to work, one must install the below dependencies
-- the `saveh5/loadh5` functions are provided by the EazyH5 toolbox at 
-  http://github.com/fangq/eazyh5
+- the `saveh5/loadh5` functions are provided by the EasyH5 toolbox at 
+  http://github.com/NeuroJSON/easyh5
 - the `savejson` and `savebj` functions are provided by the JSONLab 
   toolbox at http://github.com/NeuroJSON/jsonlab 
 - if data compression is specified by `'compression','zlib'` param/value 
-  pairs, ZMat toolbox will be needed, http://github.com/fangq/zmat
+  pairs, ZMat toolbox will be needed, http://github.com/NeuroJSON/zmat
 
 
 ## Usage
@@ -168,7 +169,7 @@ Example:
   data=snirfcreate;              % create an empty SNIRF data structure
   data=snirfcreate('data',realdata,'aux',realauxdata); % setting the default values to user data
   data=jsnirfcreate('format','snirf');                 % specify 'snirf' or 'jsnirf' using 'format' option
-  jsn=snirfdecode(loadh5('mydata.snirf'));             % load raw HDF5 data and convert to a JSNIRF struct
+  jsn=snirfdecode(loadh5('mydata.snirf', 'stringarray', 1)); % load raw HDF5 data and convert to a JSNIRF struct
 ```
 ### `loadsnirf/loadjsnirf` - Loading SNIRF/JSNIRF files as in-memory MATLAB data structures
 Example:

@@ -24,7 +24,7 @@ function snf = snirfcreate(varargin)
 %    example:
 %        snf=snirfcreate('data',mydata,'aux',myauxdata,'comment','test');
 %
-%    this file is part of JSNIRF specification: https://github.com/fangq/snirf
+%    this file is part of JSNIRFY toolbox: https://github.com/NeuroJSON/jsnirfy
 %
 %    License: GPLv3 or Apache 2.0, see https://github.com/NeuroJSON/jsnirf for details
 %

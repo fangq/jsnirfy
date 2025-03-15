@@ -2,7 +2,30 @@
 
 Major updates are marked with a "*"
 
-== JSNIRF Toolbox v0.4 (Amygdala - alpha), FangQ <q.fang (a) neu.edu> ==
+== JSNIRFY Toolbox v0.5 (Amygdala), FangQ <q.fang (a) neu.edu> ==
+
+ 2025-03-15 [672e388] [bug] support pre-R2016b matlab, although output snirf is not compliant
+ 2025-03-14 [f0caf85]*[bug] saving detectorLabels and sourceLabels as strings, fNIRS/snirf-samples#13
+ 2025-02-23 [70e6e84] Fix saving cell2mat
+ 2024-10-02 [555c12d] [doc] update upstream repository to NeuroJSON
+ 2024-09-15 [0bc960d]*[format] complete reformat code using miss_hit
+ 2024-09-15 [e5e3fb5] [snirf] allow saving empty 1d vector as timeseries
+ 2024-07-09 [391137b] [snirf] fix probe.sourceLabels with timeseries(string({})), fNIRS/snirf-samples#8
+ 2024-07-08 [a0adfd9]*[feature] use timeseries datatype for true 1d vector, NeuroJSON/easyh5#16, fNIRS/snirf-samples#12
+ 2024-07-07 [966220d]*[bug] store snirf 1D vector fields with ndim=1, NeuroJSON/easyh5#16, fNIRS/snirf-samples#12
+ 2023-02-20 [e196ebd]*force measurementList to be array-of-struct for snirf v1
+ 2023-02-12 [95db007] make variablelengthstring default for snirf, NeuroJSON/jsnirfy#1
+ 2022-03-15 [4e7de16] fix typos, update github repo URLs
+ 2022-03-15 [a648417] rename all ubjson functions to bjdata functions, fix root-obj name typo
+ 2020-05-22 [4140f15] forcing index 1 in indexed group names in savesnirf, see fNIRS/snirf_homer3#4
+ 2020-05-16 [c46eb32] update snirf header to conform to the latest snirf spec
+ 2019-11-05 [3bef8df] add section why JSNIRF
+ 2019-10-30 [6dde565] add missing TimeUnit
+ 2019-10-30 [0b95152] use correct MeasurentTime MeasurementDate default value
+ 2019-10-30 [c99ba31] use the latest option of easyh5
+ 2019-09-28 [1e64227] collapse measurementList according to JSNIRF spec
+
+== JSNIRFY Toolbox v0.4 (Amygdala - alpha), FangQ <q.fang (a) neu.edu> ==
 
  2019-09-19 [61def95] adding issues link in README
  2019-09-19 [b4d357c] polishing snirf toolbox, handling root object names

@@ -1,0 +1,9 @@
+[submodule "external/easyh5"]
+	path = external/easyh5
+	url = https://github.com/NeuroJSON/easyh5.git
+[submodule "external/jsonlab"]
+	path = external/jsonlab
+	url = https://github.com/NeuroJSON/jsonlab.git
+[submodule "external/zmat"]
+	path = external/zmat
+	url = https://github.com/NeuroJSON/zmat.git
