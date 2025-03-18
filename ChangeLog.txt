@@ -2,7 +2,7 @@
 
 Major updates are marked with a "*"
 
-== JSNIRFY Toolbox v0.5 (Amygdala), FangQ <q.fang (a) neu.edu> ==
+== JSNIRFY Toolbox v0.9 (Amygdala - final), FangQ <q.fang (a) neu.edu> ==
 
  2025-03-15 [672e388] [bug] support pre-R2016b matlab, although output snirf is not compliant
  2025-03-14 [f0caf85]*[bug] saving detectorLabels and sourceLabels as strings, fNIRS/snirf-samples#13

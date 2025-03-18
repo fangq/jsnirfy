@@ -1,8 +1,8 @@
 ===============================================================================
-=                      Monte Carlo eXtreme (MCX) -- CUDA                      =
+=    JSNIRFY - A compact MATLAB/Octave toolbox to read/write SNIRF files      =
 ===============================================================================
 
-Copyright (c) 2010-2019  Qianqian Fang <q.fang at neu.edu>
+Copyright (c) 2019-2025  Qianqian Fang <q.fang at neu.edu>
 
 -------------------------------------------------------------------------------
 

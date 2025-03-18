@@ -6,7 +6,7 @@ function data = loadsnirf(fname, varargin)
 %
 %    Load an HDF5 based SNIRF file, and optionally convert it to a JSON
 %    file based on the JSNIRF specification:
-%    https://github.com/NeuroJSON/jsnirf
+%    https://github.com/NeuroJSON/jsnirfy
 %
 %    author: Qianqian Fang (q.fang <at> neu.edu)
 %
@@ -29,7 +29,7 @@ function data = loadsnirf(fname, varargin)
 %
 %    this file is part of JSNIRF specification: https://github.com/NeuroJSON/jsnirf
 %
-%    License: GPLv3 or Apache 2.0, see https://github.com/NeuroJSON/jsnirf for details
+%    License: GPLv3 or Apache 2.0, see https://github.com/NeuroJSON/jsnirfy for details
 %
 
 if (nargin == 0 || ~ischar(fname))
